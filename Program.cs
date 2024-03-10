@@ -10,3 +10,18 @@ class Program
             Console.WriteLine("Некорректный ввод. Размер массива должен быть положительным целым числом.");
             return;
         }
+    string[] originalArray = new string[size];
+
+        for (int i = 0; i < originalArray.Length; i++)
+        {
+            Console.Write($"Введите элемент массива [{i}]: ");
+            originalArray[i] = Console.ReadLine();
+        }
+
+        string[] newArray = FilterStrings(originalArray);
+
+        Console.WriteLine("\nНовый массив строк, длина которых меньше или равна 3 символам:");
+        foreach (string str in newArray)
+        {
+            Console.WriteLine(str);
+        }
