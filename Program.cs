@@ -10,7 +10,8 @@ class Program
             Console.WriteLine("Некорректный ввод. Размер массива должен быть положительным целым числом.");
             return;
         }
-    string[] originalArray = new string[size];
+
+        string[] originalArray = new string[size];
 
         for (int i = 0; i < originalArray.Length; i++)
         {
@@ -26,7 +27,7 @@ class Program
             Console.WriteLine(str);
         }
     }
-  
+
     static string[] FilterStrings(string[] originalArray)
     {
         int count = 0;
@@ -39,3 +40,17 @@ class Program
         }
 
         string[] newArray = new string[count];
+
+        int index = 0;
+        foreach (string str in originalArray)
+        {
+            if (str.Length <= 3)
+            {
+                newArray[index] = str;
+                index++;
+            }
+        }
+
+        return newArray;
+    }
+}
